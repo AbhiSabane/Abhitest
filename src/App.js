@@ -1,27 +1,50 @@
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Dummy_Component from "dummy-component";
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Container, ThemeProvider, CssBaseline, Switch, } from '@mui/material';
+import Demo from './Components/Demo';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Aaaa from './Components/Aaaa';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Dummy_Component/>
-      </header>
-    </div>
+    <Container maxWidth={"xl"}>
+      <br></br>
+
+
+      <CssBaseline />
+      <BrowserRouter>
+
+        <Routes>
+
+
+          <Route path="/" element={<Demo />} />
+          <Route path="/Aaaa" element={< Aaaa />} />
+
+
+
+
+          {/* <Route path="/" element={<UserLogin/>} > </Route>
+    <Route path="/Catageory" element={<Catageory />} />
+    <Route path="/Home" element={<Home />} />
+    <Route path="/Product" element={<Product />} />
+    <Route path="/ForgotPassword" element={<ForgotPassword />} />
+    <Route path="/AddCatagory" element={<AddCatagory />} />
+    <Route path="/AddProduct" element={<AddProduct />} />
+    <Route path="/EditCategory/:id" element={<EditCategory />} />
+    <Route path="/EditProduct/:id" element={<EditProduct />} /> */}
+          {/* <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+    </Switch> */}
+
+        </Routes>
+
+      </BrowserRouter>
+
+
+    </Container>
   );
 }
 
